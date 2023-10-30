@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Formulaire de Réclamation</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <div class="ion-margin">
+    <ion-card class="add-car-card">
+      <ion-card-header>
+        <ion-card-title>
+          Veuillez remplir tous les champs</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+       <form id="claimForm">
+          <ion-item>
+          <ion-input [(ngModel)]="email" type="email" name="email" id="email" placeholder="Adresse e-mail" required></ion-input>
+          </ion-item>
+          <ion-item>
+          <ion-textarea [(ngModel)]="message" type="text" name="claimDescription" id="claimDescription" placeholder="Description de la réclamation" required></ion-textarea>
+          </ion-item>
+          </form>
+      </ion-card-content>
+
+      <ion-footer>
+        <ion-button class="add-button" id="submit-claim"  expand="block" type="submit" value="Add" routerLink="/mes-reclamations" color="medium" (click)="addNewReclamation()">Soumettre la Réclamation</ion-button>
+      </ion-footer>
+    </ion-card>
+  </div>
+</ion-row>
+</ion-grid>
+</ion-content>

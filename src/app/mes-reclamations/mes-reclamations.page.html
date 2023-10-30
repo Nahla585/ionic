@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Mes réclamations</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen="true">
+  <div class="ads-list">
+    <ion-card *ngFor="let reclamation of tabreclamations">
+      <ion-row>
+        <ion-col size="8">
+          <ion-card-content>
+            <p class="Model">Description de la réclamation : <br> {{ reclamation.claimdescription }}</p>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+</ion-content>

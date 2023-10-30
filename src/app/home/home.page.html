@@ -1,0 +1,50 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding" [fullscreen]="true">
+    <a [routerLink]="['/add-reclamation']" class  ="menu-link">Ajouter une réclamation</a>
+    <a [routerLink]="['/mes-reclamations']" class="menu-link">Mes réclamations</a>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+   <ion-text>
+    <div class="ion-text-center">
+      <h1> Réclamations sur les Conditions de
+        Travail </h1>
+    </div>
+  </ion-text>
+      <ion-buttons slot="end">
+       <ion-button [routerLink]="['/login'] " (click)="logout()">
+         <ion-icon slot="icon-only" name="logo-ionic" size="large"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div class="ion-margin">
+      <ion-card *ngFor="let reclamation of tabreclamations" [routerLink]="['/details-reclamation', reclamation.id]" class="reclamation-card">
+        <ion-card-header>
+          <ion-card-title>{{ reclamation.email }}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <br>
+            <strong>{{ reclamation.message }}</strong>
+        </ion-card-content>
+
+        <ion-button class="details-button">Détails</ion-button>
+        
+      </ion-card>
+    </div>
+  </ion-content>
+</div>

@@ -1,0 +1,40 @@
+
+
+<ion-content [fullscreen]="true">
+  <div class="parent">
+    <div class="div1">
+      <div class="container">
+        <div class="heading">Créer un compte</div>
+        <form action="" class="form">
+          <input required="" [(ngModel)]="prenom" class="input" type="firstname" name="firstname" id="firstname" placeholder="Prénom">
+          <input required="" [(ngModel)]="nom" class="input" type="lastname" name="lastname" id="lastname" placeholder="Nom">
+          <input required="" [(ngModel)]="email" class="input" type="email" name="email" id="email" placeholder="E-mail">
+          <input required="" [(ngModel)]="telephone" class="input" type="phone" name="phone" id="phone" placeholder="Numéro de téléphone">
+          <label for="posteDeTravail"><h6>Poste de travail :</h6></label>
+<select [(ngModel)]="poste" name="posteDeTravail" id="posteDeTravail" class="input">
+  <option value="Architecte Logiciel">Architecte Logiciel</option>
+  <option value="Analyste Fonctionnel">Analyste Fonctionnel</option>
+  <option value="Chef de Mission">Chef de Mission</option>
+  <option value="Chef de Projet">Chef de Projet</option>
+  <option value="Développeur">Développeur</option>
+  <option value="Testeur">Testeur</option>
+  <option value="Maintenance Applicative">Maintenance Applicative</option>
+  <option value="Spécialiste en Gestion de Projet">Spécialiste en Gestion de Projet</option>
+</select>
+<label for="grade"><h6>Grade :</h6></label>
+<select [(ngModel)]="grade" name="grade" id="grade" class="input">
+  <option value="Ingénieur Principal">Ingénieur Principal</option>
+  <option value="Ingénieur Major">Ingénieur Major</option>
+  <option value="Technicien">Technicien</option>
+</select>
+          <input required="" [(ngModel)]="password" class="input" type="password" name="password" id="password" placeholder="Mot de passe">
+        
+         
+          <span class="signup"  (click)="register()" routerLink="/login">Créer un compte</span>
+        </form>
+          <span class="signin" routerLink="/login"><h4>Se connecter</h4></span>
+      </div>
+       </div>
+    </div>
+</ion-content>
+
